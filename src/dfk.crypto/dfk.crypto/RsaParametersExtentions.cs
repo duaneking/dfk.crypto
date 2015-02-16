@@ -19,7 +19,7 @@ namespace dfk.crypto
         /// Private Keys have all fields set.
         /// </summary>
         /// <param name="rsaParameters">The RSAParameters to check.</param>
-        /// <param name="isSetToRsaPrivateKey">True if we expect this to be a private RSAw key, false if not.</param>
+        /// <param name="isSetToRsaPrivateKey">True if we expect this to be a private RSA key, false if not.</param>
         /// <returns>True if the RSAParameters object is a valid key of the desired privacy.</returns>
         public static bool IsSetToValidRsaKey(this RSAParameters rsaParameters, bool isSetToRsaPrivateKey)
         {
