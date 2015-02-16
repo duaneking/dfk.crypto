@@ -11,7 +11,7 @@ namespace dfk.crypto.tests
         [TestCase("UGxlYXNlIGRvIG5vdCBzdGVhbC4=")]
         public void IsBase64Test(string text)
         {
-            text.IsNoneEmptyBase64String().Should().BeTrue();
+            text.IsNonEmptyBase64String().Should().BeTrue();
         }
 
         [TestCase(null)]
@@ -25,7 +25,7 @@ namespace dfk.crypto.tests
         [TestCase(" UGxlYXNlIGRvIG5vdCBzdGVhbC= ")]
         public void IsNotBase64Test(string text)
         {
-            text.IsNoneEmptyBase64String().Should().BeFalse();
+            text.IsNonEmptyBase64String().Should().BeFalse();
         }
     }
 }

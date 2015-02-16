@@ -12,7 +12,7 @@ namespace dfk.crypto
         /// </summary>
         /// <param name="text">The text to check.</param>
         /// <returns>True if the string is encoded in a valid base64 encoding; false otherwise.</returns>
-        public static bool IsNoneEmptyBase64String(this string text)
+        public static bool IsNonEmptyBase64String(this string text)
         {
             if (text == null)
             {
