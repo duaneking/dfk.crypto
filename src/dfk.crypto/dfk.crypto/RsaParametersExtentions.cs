@@ -10,22 +10,6 @@ namespace dfk.crypto
         private static readonly XmlSerializer XmlSerializer = new XmlSerializer(typeof(RSAParameters));
 
         /// <summary>
-        /// Calculate the Max Encryptable RSA block size in bytes based on the size of the RSA Key and the padding type used.
-        /// </summary>
-        /// <param name="rsaParameters">The rsa key to use to calcualte the correct size of the block.</param>
-        /// <param name="doOaepPadding">True if you want to use OAEP pading as part of the calculation instead of PKCS#1 /"v1.5" padding.  Its not very well supported in .Net but it is in Mono</param>
-        /// <returns></returns>
-        public static int MaxRsaEncryptableBlockSize(this RSAParameters rsaParameters, bool doOaepPadding = false)
-        {
-            if (!rsaParameters.IsSetToValidRsaKey(true) && !rsaParameters.IsSetToValidRsaKey(false))
-            {
-                throw new ArgumentOutOfRangeException("rsaParameters", rsaParameters, "rsaParameters must be a valid public or private RSA key.");
-            }
-
-            return (rsaParameters.Modulus.Length - 48) + (doOaepPadding ? 7 : 37);
-        }
-
-        /// <summary>
         /// As a struct value type RSAParameters cannot be null.. but its fields can be.
         /// 
         /// This method checks if a RSAParameters is a valid public or private key as expected based on the set field values.

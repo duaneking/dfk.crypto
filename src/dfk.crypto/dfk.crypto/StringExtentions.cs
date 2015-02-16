@@ -5,6 +5,9 @@ namespace dfk.crypto
 {
     public static class StringExtentions
     {
+        /// <summary>
+        /// Compile regex in memory. Takes longer to initialize but speeds up how it runs when called multiple times.
+        /// </summary>
         private static readonly Regex Base64Regex = new Regex(@"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.Compiled);
 
         /// <summary>
