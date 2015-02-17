@@ -30,10 +30,10 @@ namespace dfk.crypto.tests
 				algo.GenerateKey();
                 algo.GenerateIV();
 
-                // Encrypt the string to an array of bytes. 
+                // Encrypt the array of bytes.
                 byte[] encrypted = original.EncryptBytesWith<T>(algo.Key, algo.IV);
 
-                // Decrypt the bytes to a string. 
+                // Decrypt the now encrypted bytes.
                 byte[] roundtrip = encrypted.DecryptBytesWith<T>(algo.Key, algo.IV);
 
                 //Display the original data and the decrypted data.
@@ -41,6 +41,7 @@ namespace dfk.crypto.tests
                 Console.WriteLine("encrypted of size {0}: {1}", encrypted.Length, encrypted.ToHexString());
                 Console.WriteLine("Round Trip of size {0}: {1}", roundtrip.Length, roundtrip.ToHexString());
 
+                encrypted.Should().NotEqual(original);
                 roundtrip.Should().Equal(original);
             }
         }
