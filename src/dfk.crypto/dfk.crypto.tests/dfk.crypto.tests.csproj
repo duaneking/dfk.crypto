@@ -60,6 +60,7 @@
     <Compile Include="Base64Tests.cs" />
     <Compile Include="BytesTests.cs" />
     <Compile Include="BytesToHexStringTests.cs" />
+    <Compile Include="HashAlgorithmTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RsaParametersTests.cs" />
     <Compile Include="SymmetricAlgorithmCryptoTests.cs" />
