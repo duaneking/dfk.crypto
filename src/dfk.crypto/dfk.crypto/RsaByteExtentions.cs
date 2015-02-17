@@ -40,16 +40,6 @@ namespace dfk.crypto
         }
 
         /// <summary>
-        /// Check if a byte[] is empty or null.
-        /// </summary>
-        /// <param name="bytes"></param>
-        /// <returns>True if empty, false otherwise.</returns>
-        public static bool IsNullOrEmpty(this byte[] bytes)
-        {
-            return bytes == null || bytes.Length == 0;
-        }
-
-        /// <summary>
         /// Encrypt with RSA using a Public Key.
         /// </summary>
         /// <param name="bytesToEncrypt">The bytes to encrypt.</param>

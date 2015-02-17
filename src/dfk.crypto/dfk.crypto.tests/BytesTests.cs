@@ -342,14 +342,14 @@ namespace dfk.crypto.tests
         }
         [Test]
         [TestCase(1024 * 1)]
-        [TestCase(1024 * 2)]
-        [TestCase(1024 * 4)]
-        [TestCase(1024 * 8)]
-        [TestCase(1024 * 16)]
+//        [TestCase(1024 * 2)]
+//        [TestCase(1024 * 4)]
+//        [TestCase(1024 * 8)]
+//        [TestCase(1024 * 16)]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void UsePublicKeyToDecryptInsteadOfPrivatekeyThrowsNullArgumentExceptionTest(int bits)
         {
-            byte[] bytes = new byte[0];
+            byte[] bytes = {0x13, 0x21, 0x73};
 
             using (var csp = new RSACryptoServiceProvider(bits))
             {
