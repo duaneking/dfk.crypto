@@ -17,6 +17,7 @@ namespace dfk.crypto.tests
         {
             yield return new DESCryptoServiceProvider();
             yield return new RijndaelManaged();
+            yield return new AesManaged();
         }
 
         [Test, TestCaseSource("GetSymmetricAlgorithmTestData")]
